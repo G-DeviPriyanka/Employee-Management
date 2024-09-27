@@ -1,0 +1,17 @@
+<div class="task-container" *ngIf="userTasks && userTasks.length > 0">
+    
+    <ul class="task-list">
+      <li *ngFor="let task of userTasks" class="task-item">
+        <h3>{{ task.task }}</h3>
+        <p><strong>Description:</strong> {{ task.description }}</p>
+        <p><strong>Assign Date:</strong> {{ task.assignDate }}</p>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="empty-message" *ngIf="userTasks && userTasks.length === 0">
+    <p>No tasks assigned.</p>
+  </div>
+  
+ 
+  

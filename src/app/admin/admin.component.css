@@ -1,0 +1,133 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #f0f2f5, #e9ecef); /* Gradient background */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styling */
+.header {
+  width: 100%;
+  background-color: #007bff; /* Blue background */
+  color: rgb(204, 42, 42);
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: max-content;
+}
+
+/* Container for sidebar and content */
+.main-container {
+  display: flex;
+  margin-top: 70px; /* Adjusts space for the fixed header */
+  height: calc(100vh - 70px); /* Adjust height to account for the header */
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 220px; /* Adjusted width for better spacing */
+  background: linear-gradient(to bottom, #343a40, #495057); /* Dark gradient for the sidebar */
+  padding: 20px;
+  border-right: 1px solid #6c757d; /* Slightly lighter border */
+  position: fixed;
+  top: 70px; /* Starts below the header */
+  bottom: 0;
+  left: 0;
+  height: calc(100vh - 70px);
+}
+
+/* Sidebar Links */
+.sidebar a {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #adb5bd; /* Light gray text for links */
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+/* Content styling */
+.content {
+  margin-left: 220px; /* Leaves space for the sidebar */
+  padding: 20px;
+  flex-grow: 1;
+  background: linear-gradient(to top left, #ffffff, #f8f9fa); /* Light gradient for content area */
+  border-radius: 8px; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(71, 67, 67, 0.1); /* Subtle shadow effect */
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #dee2e6; /* Light gray border */
+}
+
+.table th {
+  background: linear-gradient(to bottom, #007bff, #0056b3); /* Gradient blue header */
+  color: white; /* White text for header */
+}
+
+.table tr:nth-child(even) {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef); /* Light gradient for alternate rows */
+}
+
+.table tr:nth-child(odd) {
+  background: #ffffff; /* White background for odd rows */
+}
+/* Navbar background color */
+.navbar-dark {
+  background-color: #343a40; /* Dark background for the navbar */
+}
+
+/* Center content text color */
+.navbar-dark .text-center {
+  color: #acd6ff; /* Light text color for better contrast */
+}
+
+/* Profile text color */
+.navbar-dark .text-light {
+  color: #f8f9fa; /* Light text color for profile information */
+}
+
+/* Logout button color */
+.navbar-dark .btn-light {
+  color: #343a40; /* Dark text color for contrast */
+  background-color: #e9ecef; /* Light background color for the button */
+  border: none;
+}
+
+/* Adjust button hover state */
+.navbar-dark .btn-light:hover {
+  background-color: #dee2e6; /* Slightly darker background on hover */
+}

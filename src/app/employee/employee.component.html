@@ -1,0 +1,25 @@
+
+<form [formGroup]="d" class="search-form">
+    <div class="form-group">
+
+      <div>Please provide Details to find</div>
+      <input type="text" placeholder="Enter name or email" formControlName="name" class="form-control" (input)="res()">
+
+      <button (click)="emp()" class="btn btn-primary">Search</button>
+    </div>
+    
+    <ul class="suggestions-list" *ngIf="resu.length > 0">
+      <li *ngFor="let suggestion of resu" (click)="selectSuggestion(suggestion)">
+        {{ suggestion.uname }} - {{ suggestion.email }}
+      </li>
+    </ul>
+    
+    <div class="results">
+      <div *ngFor="let m of userArray1" class="result-item">
+        <p><strong>Name:</strong> {{m.uname}}</p>
+        <p><strong>Email:</strong> {{m.email}}</p>
+        <p><strong>Phone:</strong> {{m.phone}}</p>
+      </div>
+    </div>
+  </form>
+  

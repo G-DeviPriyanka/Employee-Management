@@ -1,0 +1,93 @@
+
+/* Style the navbar */
+.navbar {
+  padding: 0.5rem 1rem;
+  background-color: #292e33;
+}
+
+/* Container for the navbar content */
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+}
+
+/* Center the user panel text */
+.navbar .text-center {
+  flex: 1;
+}
+
+/* Style for the profile icon */
+.navbar img {
+  border-radius: 50%;
+}
+
+/* Style for logout button */
+.navbar .btn-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar .btn-link:hover {
+  text-decoration: underline;
+}
+
+/* Style for welcome text and profile icon */
+.navbar .d-flex {
+  display: flex;
+  align-items: center;
+}
+
+/* General styling for the sidebar and content */
+.user-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f5f8fa;
+  padding: 20px;
+  border-right: 1px solid #dee2e6;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #212529;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+/* Style the dropdown */
+.dropdown-menu {
+  min-width: 150px;
+  padding: 0;
+}
+
+.dropdown-item {
+  padding: 10px;
+  font-size: 14px;
+  color: #d1df0b;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+.dropdown-divider {
+  margin: 0;
+  border-top: 1px solid #e9ecef;
+}

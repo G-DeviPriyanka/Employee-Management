@@ -1,0 +1,101 @@
+<div class="container justify-content-center align-items-center w-50">
+  <form [formGroup]='lname'>
+    <fieldset class="field">
+      <legend [class.active]="color"> Welcome </legend>
+
+      <!-- Username Field -->
+      <div class="mb-3">
+        <label for="uname" class="form-label">Enter Name:</label>
+        <input type="text" id="uname" formControlName="uname" class="form-control" placeholder="Enter name">
+        <p *ngIf="lname.get('uname')?.touched && lname.get('uname')?.hasError('required')" class="text-danger">
+          Username is required
+        </p>
+        <p *ngIf="lname.get('uname')?.touched && lname.get('uname')?.hasError('minlength')" class="text-danger">
+          Username must be at least three characters.
+        </p>
+        <p *ngIf="lname.get('uname')?.touched && lname.get('uname')?.hasError('userexist')" class="text-danger">
+          User exists
+        </p>
+      </div>
+
+      <!-- Password Field -->
+      <div class="mb-3">
+        <label for="pwd" class="form-label">Enter Password:</label>
+        <input type="password" id="pwd" formControlName="pwd" class="form-control" placeholder="Enter password">
+        <p *ngIf="lname.get('pwd')?.hasError('minlength')" class="text-danger">
+          Password must have 5 characters.
+        </p>
+        <p *ngIf="lname.get('pwd')?.touched && lname.get('pwd')?.hasError('uppererror')" class="text-danger">
+          Must contain one uppercase letter.
+        </p>
+      </div>
+
+      <!-- Email Field -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Enter Email:</label>
+        <input id="email" type="email" formControlName="email" class="form-control" placeholder="Enter your email">
+        <p *ngIf="lname.get('email')?.hasError('pattern')" class="text-danger">
+          Email must be valid.
+        </p>
+        <p *ngIf="lname.get('email')?.hasError('emailexist')" class="text-danger">
+          Email already exists.
+        </p>
+      </div>
+
+      <!-- Phone Number Field -->
+      <div class="mb-3">
+        <label for="phone" class="form-label">Enter Phone Number:</label>
+        <input id="phone" type="tel" formControlName="phone" class="form-control" placeholder="Enter your phone number">
+        <p *ngIf="lname.get('phone')?.hasError('pattern')" class="text-danger">
+          Mobile number must have 10 digits.
+        </p>
+      </div>
+
+      <!-- Gender Dropdown -->
+      <div class="mb-3">
+        <label class="form-label">Select Gender:</label>
+        <select formControlName="gender" class="form-select" required>
+          <option value="" disabled selected>Select an option</option>
+          <option *ngFor="let m of topic" [value]="m">{{m}}</option>
+        </select>
+        <p *ngIf="lname.get('gender')?.touched && lname.get('gender')?.hasError('required')" class="text-danger">
+          Choose one.
+        </p>
+      </div>
+
+      <!-- Team Selection (Type) -->
+      <div class="mb-3">
+        <label class="form-label">Select Team:</label><br>
+        <div>
+          <input type="radio" id="hr" formControlName="type" value="hr">
+          <label for="hr" class="form-check-label">HR</label><br>
+
+          <input type="radio" id="developer" formControlName="type" value="developer">
+          <label for="developer" class="form-check-label">Developer</label><br>
+
+          <input type="radio" id="tester" formControlName="type" value="tester">
+          <label for="tester" class="form-check-label">Tester</label><br>
+
+          <input type="radio" id="admin" formControlName="type" value="admin">
+          <label for="admin" class="form-check-label">Admin</label>
+        </div>
+      </div>
+      <div [formGroup]="address">
+        <div formArrayName="add">
+            <label>Enter Address :</label>
+            <div *ngFor="let m of address.controls['add']['controls'] let i=index">
+        <input type="text" formControlName="{{i}}"><br><br>
+        </div>
+      <button type="button" (click)="add()" class="btn btn-primary">Add Address</button>
+    </div>
+  </div>
+  
+      <!-- Submit Button -->
+      <div class="mt-3">
+        <button type="submit" class="btn btn-success" style="margin-right: 15px;" (click)="sub()" [disabled]="!lname.valid">Submit</button>
+        <button class="btn btn-success" [routerLink]="['/login']">Login</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<router-outlet></router-outlet>

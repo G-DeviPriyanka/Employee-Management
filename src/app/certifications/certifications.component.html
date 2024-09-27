@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Certifications</h2>
+    
+
+    <form [formGroup]="certificationForm" (ngSubmit)="addCertification()">
+      <div class="mb-3">
+        <label for="certificationName" class="form-label">Certification Name:</label>
+        <input type="text" id="certificationName" formControlName="certificationName" class="form-control" placeholder="Enter certification name">
+        <p *ngIf="certificationForm.get('certificationName')?.hasError('required')" class="text-danger">Certification name is required.</p>
+      </div>
+      
+      <div class="mb-3">
+        <label for="issueDate" class="form-label">Issue Date:</label>
+        <input type="date" id="issueDate" formControlName="issueDate" class="form-control">
+      </div>
+      
+      <button type="submit" class="btn btn-primary" [disabled]="!certificationForm.valid">Add Certification</button>
+    </form>
+  
+    <div *ngIf="certifications.length > 0">
+      <h3>Certification List</h3>
+      <ul>
+        <li *ngFor="let cert of certifications">
+          {{ cert.name }} - Issued on: {{ cert.issueDate | date }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  

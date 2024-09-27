@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid d-flex align-items-center">
+   
+    <div class="flex-grow-1">
+   
+    </div>
+
+
+    <div class="text-center text-light">
+      <span>Admin Panel</span>
+    </div>
+
+    <div class="d-flex align-items-center ms-3">
+      <span class="text-light me-3">{{ adminEmail }}</span>
+      <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" 
+           alt="Profile Icon" 
+           class="img-fluid rounded-circle" 
+           style="width: 40px; height: 40px;">
+      <a class="btn btn-light ms-3" href="#">Logout</a>
+    </div>
+  </div>
+</nav>
+
+
+<div class="user-container">
+  <div class="sidebar">
+    <a routerLink="taskmanager">Task Manager</a>
+    <a routerLink="show">Show Users</a>
+    <a routerLink="adminattendance">Attendance</a>
+    <a routerLink="performance-review">Performance Review</a>
+    <a routerLink="chart">Charts</a>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+    
+  </div>
+
+</div>
+
+
+

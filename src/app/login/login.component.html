@@ -1,0 +1,26 @@
+<h4 text-align="center">Please Provide Credentials</h4>
+<div class=" container justify-content-center align-items-center  w-50" >
+    <form [formGroup]='lname' >
+    <div class="mb-3">
+        <label for="email" class="form-label">Enter Email:</label>
+        <input id="email" type="email" formControlName="email" class="form-control" placeholder="Enter your email" #ema>
+        <p *ngIf="lname.get('email')?.hasError('pattern')" class="text-danger">Email must be valid in the default form</p>
+      </div>
+<div class="mb-3">
+    <label for="pwd" class="form-label">Enter Password:</label>
+    <input type="password" id="pwd" formControlName="pwd" class="form-control" placeholder="enter pwd" #pass>
+    <p *ngIf="lname.get('pwd')?.hasError('minlength')" class="text-danger">Password must have 5 characters</p>
+    <p *ngIf="lname.get('pwd')?.touched && lname.get('pwd')?.hasError('uppererror')" class="text-danger">Must contain one uppercase</p>
+  </div>
+  
+
+  <button (click)="verify()" class="btn btn-primary">Verify</button>
+</form>
+<div class="image-container">
+  <img src="assets/login5.jpg" alt="Login Image" class="login-image">
+</div>
+  </div>
+  <router-outlet></router-outlet>
+
+
+  

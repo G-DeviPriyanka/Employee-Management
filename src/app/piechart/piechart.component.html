@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>User Counts</h2>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.name }}</td>
+        <td>{{ category.value }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

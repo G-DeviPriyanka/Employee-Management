@@ -1,0 +1,74 @@
+<div class="container justify-content-center align-items-center w-50" >
+  <form [formGroup]="lname" class="form-container">
+    <fieldset class="field">
+      <legend [class.active]="color">Update Details</legend>
+
+      <div class="mb-3">
+        <label for="uname" class="form-label">Enter Name:</label>
+        <input type="text" id="uname" formControlName="uname" class="form-control" placeholder="Enter name">
+        <p *ngIf="lname.get('uname')?.touched && lname.get('uname')?.hasError('required')" class="text-danger">
+          Username is required
+        </p>
+        <p *ngIf="lname.get('uname')?.touched && lname.get('uname')?.hasError('minlength')" class="text-danger">
+          Username must be at least three characters
+        </p>
+        <p *ngIf="lname.get('uname')?.touched && lname.get('uname')?.hasError('userexist')" class="text-danger">
+          User exists
+        </p>
+      </div>
+
+      <div class="mb-3">
+        <label for="pwd" class="form-label">Enter Password:</label>
+        <input type="password" id="pwd" formControlName="pwd" class="form-control" placeholder="Enter password">
+        <p *ngIf="lname.get('pwd')?.hasError('minlength')" class="text-danger">Password must have at least 5 characters</p>
+        <p *ngIf="lname.get('pwd')?.touched && lname.get('pwd')?.hasError('uppererror')" class="text-danger">Must contain at least one uppercase letter</p>
+      </div>
+
+      
+      <div class="mb-3">
+        <label for="phone" class="form-label">Enter Phone Number:</label>
+        <input id="phone" type="tel" formControlName="phone" class="form-control" placeholder="Enter your phone number">
+        <p *ngIf="lname.get('phone')?.hasError('pattern')" class="text-danger">Mobile number must have 10 digits</p>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Select Your Domain:</label>
+        <select name="selectop" formControlName="topic" class="form-select" required>
+          <option selected>Select an option</option>
+          <option *ngFor="let m of topic">{{ m }}</option>
+        </select>
+        <p *ngIf="lname.get('topic')?.touched && lname.get('topic')?.hasError('required')" class="text-danger">Choose one topic</p>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Select Time of Day:</label><br>
+        <div>
+          <input type="radio" id="morning" name="timeOfDay" value="morning" formControlName="timeOfDay">
+          <label for="morning" class="form-check-label">Morning</label><br>
+          
+          <input type="radio" id="afternoon" name="timeOfDay" value="afternoon" formControlName="timeOfDay">
+          <label for="afternoon" class="form-check-label">Afternoon</label><br>
+          
+          <input type="radio" id="evening" name="timeOfDay" value="evening" formControlName="timeOfDay">
+          <label for="evening" class="form-check-label">Evening</label>
+        </div>
+      </div>
+
+      <div [formGroup]="address">
+        <div formArrayName="add">
+          <label>Enter Address:</label>
+          <div *ngFor="let control of address.controls['add']['controls']; let i = index">
+            <input type="text" [formControlName]="i" class="form-control address-input"><br><br>
+          </div>
+          <button type="button" (click)="add()" class="btn btn-primary">Add Address</button>
+        </div>
+      </div>
+
+      <div class="mt-3">
+        <button type="submit" class="btn btn-success" style="margin-right: 15px;" (click)="method()" [disabled]="!lname.valid">Update</button>
+        <button type="button" class="btn btn-secondary" [routerLink]="['/user/dashboard']">Cancel</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<router-outlet></router-outlet>

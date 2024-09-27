@@ -1,0 +1,46 @@
+<!-- app.component.html -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  
+  <div class="container-fluid d-flex align-items-center">
+    <!-- Left side (if any) -->
+    <div class="flex-grow-1">
+      <!-- Optionally add any content here -->
+    </div>
+
+    <!-- Center content -->
+    <div class="text-center">
+      <span>user panel</span>
+    </div>
+
+    <!-- Right side (Profile and Logout) -->
+    <div class="d-flex align-items-center ms-3">
+      <span class="me-3">Welcome {{ userName }}</span>
+      <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" 
+           alt="Profile Icon" 
+           class="img-fluid rounded-circle" 
+           style="width: 40px; height: 40px;">
+      <a class="btn btn-link ms-3" href="#">Logout</a>
+
+    </div>
+  </div>
+</nav>
+
+<div class="user-container">
+  <div class="sidebar">
+    <a routerLink="attendance" routerLinkActive="active">Attendance</a>
+    <a routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+    <a routerLink="editcomponent" >Edit Profile</a>
+    <a routerLink="certification">Certifications</a>
+    <a routerLink="employee">Employee Search</a>
+    <a routerLink="usertask">Tasks</a>
+    <a routerLink="notes">Notes</a>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+    
+  </div>
+</div>
+
+
+ 

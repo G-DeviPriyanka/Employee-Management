@@ -1,0 +1,11 @@
+<!-- keepnotes.component.html -->
+<div class="chat-container">
+  <div class="messages">
+    <div *ngFor="let msg of messages" class="message">{{ msg }}</div>
+  </div>
+  <div class="input-container">
+    <input [(ngModel)]="message" placeholder="Type a message" />
+    <button (click)="sendMessage()">Save</button>
+    <button (click)="downloadPDF()">Download</button>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<form [formGroup]="taskgrp" (ngSubmit)="onSubmit()">
+    <label>Title</label>
+    <input type="text" placeholder="Enter Title" formControlName="task">
+  
+    <label>Description</label>
+    <input type="text" placeholder="Enter Description of task" formControlName="description">
+  
+    <label>Assign Date</label>
+    <input type="date" formControlName="assignDate"> 
+  
+    <label>Assign to</label>
+    <select formControlName="assignee">
+      <option *ngFor="let item of userarray" [value]="item.email">{{item.uname}}</option>
+    </select>
+
+    <button type="submit">Submit</button>
+    <button type="button">Cancel</button>
+ </form>
+  

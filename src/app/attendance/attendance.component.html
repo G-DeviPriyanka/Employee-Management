@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>Attendance Record</h2>
+  <form [formGroup]="attendanceForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="date" class="form-label">Date:</label>
+      <input type="date" id="date" formControlName="date" class="form-control">
+      <p *ngIf="attendanceForm.get('date')?.touched && attendanceForm.get('date')?.hasError('required')" class="text-danger">
+        Date is required
+      </p>
+    </div>
+
+    <div class="mb-3">
+      <label for="status" class="form-label">Status:</label>
+      <select id="status" formControlName="status" class="form-select">
+        <option value="" selected>Select status</option>
+        <option value="Present">Present</option>
+        <option value="Absent">Absent</option>
+        <option value="Leave">Leave</option>
+      </select>
+      <p *ngIf="attendanceForm.get('status')?.touched && attendanceForm.get('status')?.hasError('required')" class="text-danger">
+        Status is required
+      </p>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!attendanceForm.valid">Add Attendance</button>
+  </form>
+
+  <div class="mt-3">
+    <h3>Attendance Records</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Approval Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of attendanceRecords">
+          <td>{{ record.date | date }}</td>
+          <td>{{ record.status }}</td>
+          <td>{{ record.approvalStatus }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

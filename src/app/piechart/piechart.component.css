@@ -1,0 +1,39 @@
+.container {
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f9; /* Light background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .user-table th, .user-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .user-table thead {
+    background-color: #007bff; /* Blue background for the header */
+    color: white;
+  }
+  
+  .user-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row colors */
+  }
+  
+  .user-table tbody tr:hover {
+    background-color: #e9ecef; /* Hover color */
+  }
+  

@@ -1,0 +1,60 @@
+
+/* Container for the entire user task section */
+.task-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header for the user task section */
+  .task-container h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for task list */
+  .task-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Style for individual task items */
+  .task-item {
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-item h3 {
+    margin: 0;
+    color: #007BFF;
+    font-size: 1.2rem;
+  }
+  
+  .task-item p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  /* Style for empty tasks message */
+  .empty-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+  }
+  
+  /* Style for loading message */
+  .loading-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #007BFF;
+  }
+
+  

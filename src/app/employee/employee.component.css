@@ -1,0 +1,78 @@
+
+/* form.component.css */
+
+/* Styling the form container */
+.search-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling form groups */
+  .form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling the input field */
+  .form-control {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Styling the button */
+  .btn-primary {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styling the results section */
+  .results {
+    margin-top: 20px;
+  }
+  
+  /* Styling each result item */
+  .result-item {
+    padding: 15px;
+    border: 1px solid #89c3fd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+  }
+  
+ 
+  .result-item strong {
+    color: #333;
+  }
+  
+  
+  .result-item p {
+    display: flex;
+    align-items: center;
+  }
+  
+  .result-item i {
+    margin-right: 8px; /* Adjust space between icon and text */
+    color: #007bff; /* Icon color */
+    font-size: 1.2rem; /* Adjust icon size */
+  }
+
+  

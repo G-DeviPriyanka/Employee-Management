@@ -1,0 +1,83 @@
+
+/* Container styling */
+.container {
+    max-width: 800px; /* Limit the width of the container */
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding around the container */
+    border: 1px solid #ddd; /* Light border around the container */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Header styling */
+  h2, h3 {
+    color: #333; /* Darker text color for headers */
+    margin-bottom: 20px; /* Space below headers */
+  }
+  
+  /* Form styling */
+  .form-label {
+    font-weight: bold; /* Bold labels for better visibility */
+  }
+  
+  .form-control {
+    width: 100%; /* Full width for form controls */
+    padding: 10px; /* Padding inside form controls */
+    margin-bottom: 10px; /* Space below form controls */
+    border-radius: 4px; /* Rounded corners for form controls */
+    border: 1px solid #ccc; /* Light border for form controls */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+  }
+  
+  .text-danger {
+    font-size: 14px; /* Smaller font size for error messages */
+    margin-top: -10px; /* Reduce space between input and error message */
+    margin-bottom: 10px; /* Add space below error message */
+  }
+  
+  .btn {
+    padding: 10px 20px; /* Padding inside buttons */
+    font-size: 16px; /* Font size for button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded corners for buttons */
+    border: none; /* Remove border */
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Blue background for primary button */
+    color: white; /* White text for primary button */
+  }
+  
+  .btn-primary:disabled {
+    background-color: #cce5ff; /* Lighter blue background when disabled */
+    cursor: not-allowed; /* Not allowed cursor when disabled */
+  }
+  
+  /* Certification list styling */
+  ul {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0; /* Remove default padding */
+  }
+  
+  li {
+    background-color: #f0f0f0; /* White background for list items */
+    padding: 10px; /* Padding inside list items */
+    margin-bottom: 10px; /* Space below list items */
+    border-radius: 4px; /* Rounded corners for list items */
+    border: 1px solid #ddd; /* Light border for list items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for list items */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px; /* Reduce padding on smaller screens */
+    }
+  
+    .form-control, .btn {
+      font-size: 14px; /* Smaller font size for form controls and button text */
+    }
+  }
+
+  
